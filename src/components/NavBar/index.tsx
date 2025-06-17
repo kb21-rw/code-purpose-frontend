@@ -1,88 +1,72 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import React, { useState } from "react";
+import Image from "next/image";
 
-const Navbar = () => {
+const menuItems = [
+  {
+    href: "/",
+    label: "How we work",
+  },
+  { href: "/partners", label: "Partners" },
+  { href: "/projects", label: "Projects" },
+  { href: "/contact", label: "Contact Us" },
+];
+
+function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const menuItems = [
-    { label: "Home", href: "#" },
-    { label: "About", href: "#" },
-    { label: "Services", href: "#" },
-    { label: "Contact", href: "#" },
-  ];
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
-    <header
-      className={`w-full z-50 transition-colors duration-300 ${
-        isOpen ? "bg-blue-600" : "bg-black/50"
-      } backdrop-blur-sm`}
+    <nav
+      className={`${
+        isOpen ? "bg-gray-400" : "bg-transparent"
+      } text-gray-800 py-8 px-6 flex justify-end items-start w-full absolute top-0 left-0 z-10 max-w-12xl`}
     >
-      <div className="max-w-screen-xl mx-auto px-4 md:px-10 lg:px-20 py-2 relative">
-        {/* Navbar row */}
-        <div className="flex items-center justify-between">
-          {/* Left empty (no logo) */}
-          <div />
-
-          {/* Desktop menu */}
-          <div className="hidden md:flex md:space-x-8">
-            {menuItems.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="text-white hover:text-gray-300"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-
-          {/* Mobile toggle */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-white focus:outline-none"
-              aria-label="Toggle menu"
-            >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d={
-                    isOpen
-                      ? "M6 18L18 6M6 6l12 12" // X icon
-                      : "M4 6h16M4 12h16M4 18h16" // Hamburger icon
-                  }
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile menu: positioned absolutely on the right */}
-        {isOpen && (
-          <div className="absolute right-4 top-14 bg-blue-600 p-4 rounded shadow-md space-y-2 md:hidden w-48 text-right">
-            {menuItems.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-                className="block text-white hover:text-gray-300"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        )}
+      <div className="md:hidden w-full flex justify-end items-start">
+        <button onClick={toggleMenu} className="focus:outline-none">
+          {isOpen ? (
+            <Image
+              src="images/close.svg"
+              className="w-8 h-8"
+              alt={""}
+              width={40}
+              height={40}
+            />
+          ) : (
+            <Image
+              src="images/open.svg"
+              className="w-8 h-8"
+              alt={""}
+              width={40}
+              height={40}
+            />
+          )}
+        </button>
       </div>
-    </header>
+      <div
+        className={`w-full md:w-auto md:flex md:items-center ${
+          isOpen ? "block h-92vh md:h-auto bg-gray-400" : "hidden"
+        }  md:bg-transparent absolute top-12 left-0 px-7 md:static z-10`}
+      >
+        <ul className="nav-menu list-none font-semibold flex flex-col h-full md:flex-row gap-14 md:gap-8 text-4xl mt-10 md:mt-0 md:text-lg justify-start items-end m-0 p-0 w-full md:w-auto">
+          {menuItems.map((item) => (
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                className="hover:text-gray-200 text-white animate-fly-in-down transition-all duration-500"
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </nav>
   );
-};
+}
 
 export default Navbar;
