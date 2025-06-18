@@ -11,13 +11,13 @@ const Homepage = () => {
           className="object-cover"
           priority
         />
-        <div className="absolute container inset-0 flex flex-col items-start gap-6 justify-center bg-black/40">
+        <div className="absolute container inset-0 flex flex-col items-start gap-11 justify-center bg-black/40">
           <h1 className="text-3xl md:text-4xl font-extrabold lg:text-9xl text-white px-4 w-full md:w-4/5 lg:w-1/2 xl:w-2/5">
             CodePurpose
           </h1>
           <p className=" md:text-base  text-white px-4 w-full md:w-4/5 lg:w-1/2  lg:text-3xl font-normal">
             We partner with social impact actors to develop <br />
-            <span className="bg-yellow-500">
+            <span className="bg-primary">
               digital solutions that make the world a better place.
             </span>
           </p>

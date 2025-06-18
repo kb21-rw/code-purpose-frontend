@@ -52,13 +52,10 @@ function Navbar() {
           isOpen ? "block h-92vh md:h-auto bg-gray-400" : "hidden"
         }  md:bg-transparent absolute top-12 left-0 px-7 md:static z-10`}
       >
-        <ul className="nav-menu list-none font-semibold flex flex-col h-full md:flex-row gap-14 md:gap-8 text-4xl mt-10 md:mt-0 md:text-lg justify-start items-end m-0 p-0 w-full md:w-auto">
+        <ul className="list-none  flex flex-col h-full md:flex-row gap-14 md:gap-8  mt-10 md:mt-0  justify-start items-end m-0 p-0 w-full md:w-auto">
           {menuItems.map((item) => (
-            <li key={item.href}>
-              <Link
-                href={item.href}
-                className="hover:text-gray-200 text-white animate-fly-in-down transition-all duration-500"
-              >
+            <li key={item.href} className="font-medium md:text-lg lg:text-2xl">
+              <Link href={item.href} className="hover:text-gray-200 text-white">
                 {item.label}
               </Link>
             </li>
