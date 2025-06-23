@@ -26,12 +26,12 @@ const ImageCard = () => {
   const [firstWord, ...rest] = header.title.split(" ");
   return (
     <div className="flex flex-col gap-25 mt-30">
-      <h1 className="text-8xl font-semibold">
+      <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold leading-11 tracking-normal">
         <span className="bg-primary">{firstWord}</span> {rest.join(" ")}
       </h1>
       {header.description && (
         <div>
-          <p className="text-lg lg:text-3xl leading-7.5">
+          <p className="text-2xl lg:text-3xl leading-7.5 lg:leading-11 tracking-normal">
             {header.description}
           </p>
         </div>

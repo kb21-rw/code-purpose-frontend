@@ -15,7 +15,7 @@ const Homepage = () => {
           <h1 className="text-5xl md:text-7xl font-extrabold lg:text-9xl text-white px-4 w-full">
             CodePurpose
           </h1>
-          <p className=" text-lg md:text-2xl  text-white px-4 w-full md:w-4/5 lg:w-1/2  lg:text-3xl font-normal">
+          <p className="text-2xl  text-white px-4 w-full md:w-4/5 lg:w-1/2  lg:text-3xl font-normal leading-7.5 lg:leading-11 tracking-normal">
             We partner with social impact actors to develop{" "}
             <span className="bg-primary">
               digital solutions that make the world a better place.

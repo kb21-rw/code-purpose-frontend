@@ -42,7 +42,7 @@ const Footer = () => {
   const [firstWord, ...rest] = "Contact Us".split(" ");
   return (
     <div className="container pt-30 flex flex-col justify-start items-start">
-      <h1 className="text-8xl  font-semibold">
+      <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold leading-11 tracking-normal">
         <span className="bg-primary">{firstWord}</span> {rest.join(" ")}
       </h1>
       <div className="flex flex-col justify-start  gap-x-18 gap-y-11 py-18 flex-wrap">

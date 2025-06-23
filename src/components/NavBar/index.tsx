@@ -50,7 +50,7 @@ function Navbar() {
       <div
         className={`w-full md:w-auto md:flex md:items-center ${
           isOpen ? "block h-92vh md:h-auto bg-gray-400" : "hidden"
-        }  md:bg-transparent absolute top-12 left-0 px-7 md:static z-10`}
+        }  md:bg-transparent absolute top-16 left-0 px-7 md:static z-10`}
       >
         <ul className="list-none  flex flex-col h-full md:flex-row gap-14 md:gap-8  mt-10 md:mt-0  justify-start items-end m-0 p-0 w-full md:w-auto">
           {menuItems.map((item) => (

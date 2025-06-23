@@ -25,6 +25,7 @@ export default {
       },
       lineHeight: {
         "7.5": "1.9688rem",
+        "11": "2.75rem",
       },
       fontSize: {
         "2.1xl": "1.5625rem",
