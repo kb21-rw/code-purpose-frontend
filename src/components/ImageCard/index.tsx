@@ -1,7 +1,7 @@
 import Card from "./Card";
 
 const header = {
-  title: "Partners",
+  title: "Projects",
   description: `We partner with social impact actors to develop digital solutions that make the world a better place.  In our projects, the expertise of our partners is joined by the experience of our software engineers, designers and product owners to form a hive mind that is more than the sum of its parts.`,
 };
 
@@ -11,23 +11,26 @@ const Cards = [
     description: ` In our projects, the expertise of our partners is joined by the
         experience of our software engineers, designers and product owners to
         form a hive mind that is more than the sum of its parts.`,
-    image: { url: "/images/image 4.jpg", name: "image" },
+    image: { url: "/images/image 3.jpg", name: "image" },
   },
   {
     title: "Lorem Ipsum",
     description: ` In our projects, the expertise of our partners is joined by the
         experience of our software engineers, designers and product owners to
         form a hive mind that is more than the sum of its parts.`,
-    image: { url: "/images/image 3.jpg", name: "image" },
+    image: { url: "/images/image 4.jpg", name: "image" },
   },
 ];
 
 const ImageCard = () => {
   const [firstWord, ...rest] = header.title.split(" ");
   return (
-    <div className="flex flex-col gap-25 mt-30">
+    <section id="projects" className="flex flex-col gap-25 pt-30">
       <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold leading-11 tracking-normal">
-        <span className="bg-primary">{firstWord}</span> {rest.join(" ")}
+        <span className="bg-primary inline-block leading-none px-1">
+          {firstWord}
+        </span>{" "}
+        {rest.join(" ")}
       </h1>
       {header.description && (
         <div>
@@ -41,7 +44,7 @@ const ImageCard = () => {
           <Card key={index} {...el} />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

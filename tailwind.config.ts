@@ -11,6 +11,9 @@ export default {
         primary: "#F3C726",
         secondary: "#3B1FD3",
       },
+      backgroundImage: {
+        hero: "url('/images/hero.jpg')",
+      },
       spacing: {
         "12xl": "125rem",
         "15": "3.75rem",
@@ -18,7 +21,7 @@ export default {
         "25": "6.25rem",
         "30": "7.5rem",
         "100": "25rem",
-        "92vh": "92vh",
+        "100vh": "100vh",
       },
       letterSpacing: {
         1.5: "0.156em",

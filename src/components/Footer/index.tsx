@@ -41,9 +41,15 @@ const copyright = "© CodePurpose 2023";
 const Footer = () => {
   const [firstWord, ...rest] = "Contact Us".split(" ");
   return (
-    <div className="container pt-30 flex flex-col justify-start items-start">
+    <section
+      id="contact"
+      className="container pt-30 flex flex-col justify-start items-start"
+    >
       <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold leading-11 tracking-normal">
-        <span className="bg-primary">{firstWord}</span> {rest.join(" ")}
+        <span className="bg-primary inline-block leading-none px-1">
+          {firstWord}
+        </span>{" "}
+        {rest.join(" ")}
       </h1>
       <div className="flex flex-col justify-start  gap-x-18 gap-y-11 py-18 flex-wrap">
         <h1 className="text-2xl lg:text-3xl  font-medium">Find us on :</h1>
@@ -68,16 +74,16 @@ const Footer = () => {
         </div>
       </div>
 
-      <hr className="border-1 border-black w-full" />
+      <hr className="border-1 border-black/50 opacity-40 w-full" />
       {copyright && (
         <div className="py-4 w-full">
-          <p className="text-center  text-lg md:text-3xl font-medium">
+          <p className="text-center  text-lg md:text-xl font-medium">
             &copy; {new Date().getFullYear()} <strong>The Gym,</strong> All
             rights reserved
           </p>
         </div>
       )}
-    </div>
+    </section>
   );
 };
 

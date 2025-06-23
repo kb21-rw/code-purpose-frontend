@@ -5,6 +5,7 @@
 :root {
   --background: #ffffff;
   --color: #010101;
+  scroll-behavior: smooth;
 }
 
 .navbar-container {
@@ -23,6 +24,7 @@ body {
   color: var(--color);
   background: var(--background);
   font-family: Montserrat, sans-serif;
+  scroll-behavior: smooth;
 }
 
 @keyframes slide-infinite {

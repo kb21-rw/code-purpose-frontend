@@ -8,9 +8,13 @@ const Card = ({ title, description, image }: any) => {
       <Image src={url} alt={name + "icon"} width={800} height={800} />
       {description && (
         <div className="flex flex-col gap-8">
-          <h1 className="text-3xl font-semibold">{title}</h1>
-          <p className="text-lg lg:text-2xl leading-7.5">{description}</p>
-          <button className="bg-primary py-3 font-semibold text-xl px-10 w-fit rounded-full">
+          <h1 className="text-3xl font-semibold leading-none tracking-normal">
+            {title}
+          </h1>
+          <p className="text-2xl lg:text-3xl leading-normal tracking-normal">
+            {description}
+          </p>
+          <button className="bg-primary py-3 font-semibold shadow-[0px_4px_4px_0px_#00000040] border-t border-t-black text-xl px-10 w-fit rounded-full">
             visit
           </button>
         </div>
