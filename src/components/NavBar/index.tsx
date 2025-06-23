@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import Scrollspy from "react-scrollspy";
 
 const menuItems = [
   { href: "#", label: "How we work", id: "home" },
@@ -13,7 +13,7 @@ const menuItems = [
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -55,29 +55,28 @@ function Navbar() {
               />
             </button>
           )}
-          <ul className="list-none md:bg-secondary/40 md:backdrop-blur-md md:rounded-full md:px-6 flex flex-col h-full md:flex-row gap-14 md:gap-8  mt-10 md:mt-0  justify-start items-end m-0 p-0 w-full md:w-auto">
-            {menuItems.map((item) => {
-              const isActive = pathname === item.id;
-              return (
-                <li
-                  key={item.href}
-                  className="relative font-bold md:font-medium text-5xl md:text-lg lg:text-2xl flex items-center justify-end gap-2"
+          <Scrollspy
+            items={menuItems.map((item) => item.id)}
+            currentClassName="group text-primary font-bold"
+            className="list-none md:bg-secondary/40 md:backdrop-blur-md md:rounded-full md:px-6 flex flex-col h-full md:flex-row gap-14 md:gap-8 mt-10 md:mt-0 justify-start items-end m-0 p-0 w-full md:w-auto"
+            offset={-100}
+          >
+            {menuItems.map((item) => (
+              <li
+                key={item.href}
+                className="relative group font-bold md:font-medium text-5xl md:text-lg lg:text-2xl flex items-center justify-end gap-2"
+              >
+                <Link
+                  href={item.href}
+                  className="hover:text-primary text-white scroll-smooth group-[.text-primary]:text-primary"
                 >
-                  <Link
-                    href={item.href}
-                    className={`hover:text-primary ${
-                      isActive ? "text-primary" : "text-white"
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                  {isActive && (
-                    <span className="w-8 md:w-2 h-8 md:h-2 bg-primary rounded-full"></span>
-                  )}
-                </li>
-              );
-            })}
-          </ul>
+                  {item.label}
+                </Link>
+
+                <span className="dot hidden"></span>
+              </li>
+            ))}
+          </Scrollspy>
         </>
       </div>
     </nav>

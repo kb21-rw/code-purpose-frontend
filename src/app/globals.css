@@ -40,3 +40,13 @@ body {
 .infinite-slide {
   animation: slide-infinite 20s linear infinite;
 }
+
+.text-primary::after {
+  content: '';
+  display: inline-block;
+  margin-left: 0.5rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #F3C726;
+  border-radius: 9999px;
+}

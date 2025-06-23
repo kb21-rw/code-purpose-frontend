@@ -11,9 +11,7 @@ export default {
         primary: "#F3C726",
         secondary: "#3B1FD3",
       },
-      backgroundImage: {
-        hero: "url('/images/hero.jpg')",
-      },
+
       spacing: {
         "12xl": "125rem",
         "15": "3.75rem",
