@@ -13,7 +13,7 @@ export default async function Home() {
     }
     return (
       <div>
-        <ComponentParser blocks={homepage.sections} />
+        <ComponentParser sections={homepage.sections} />
         <ScrollToTop />
       </div>
     );

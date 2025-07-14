@@ -4,30 +4,34 @@ import ImageSlider from "@/components/ImageSlider";
 import TextBlock from "@/components/TextBlock";
 import { Section } from "@/types/HomePage";
 
-const ComponentParser = ({ blocks }: { blocks: Section[] }) => {
+const ComponentParser = ({ sections }: { sections: Section[] }) => {
   return (
     <>
-      {blocks?.map((item: Section & { id?: number }, index: number) => {
-        const key = `${item.id + item.__component}-${index}`;
+      {sections?.map((item: Section & { id?: number }, index: number) => {
+        const key = `${item.id}-${item.__component}-${index}`;
+
         switch (item.__component) {
           case "block.hero-section":
             return <Hero key={key} {...item} />;
+
           case "block.text-block-section":
             return (
-              <div className="container">
-                <TextBlock key={key} {...item} />
+              <div className="container" key={key}>
+                <TextBlock {...item} />
               </div>
             );
+
           case "block.image-slider-section":
             return (
-              <div className="container">
-                <ImageSlider key={key} {...item} />
+              <div className="container" key={key}>
+                <ImageSlider {...item} />
               </div>
             );
+
           case "block.image-content-section":
             return (
-              <div className="container">
-                <ImageContent key={key} {...item} />
+              <div className="container" key={key}>
+                <ImageContent {...item} />
               </div>
             );
 

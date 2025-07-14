@@ -1,26 +1,30 @@
+// import { type Image } from "@/types/Image";
 import ResponsiveSlider from "../ui/ResponsiveSlider";
+import { ImageSliderSection } from "@/types/HomePage";
+import RichText from "../ui/RichText";
 
-const header = {
-  title: "Partners",
-  description: null,
-};
+// const header = {
+//   title: "Partners",
+//   body: null,
+// };
 
-const images = [
-  {
-    link: { href: "https://www.impacthub.net/", isExternal: true },
-    image: { url: "/images/image.jpg" },
-  },
-  {
-    link: { href: "https://www.impacthub.net/", isExternal: true },
-    image: { url: "/images/image 11.png" },
-  },
-  {
-    link: { href: "https://www.impacthub.net/", isExternal: true },
-    image: { url: "/images/image 10.jpg" },
-  },
-];
+// const images = [
+//   {
+//     link: { href: "https://www.impacthub.net/", isExternal: true },
+//     image: { url: "/images/image.jpg" },
+//   },
+//   {
+//     link: { href: "https://www.impacthub.net/", isExternal: true },
+//     image: { url: "/images/image 11.png" },
+//   },
+//   {
+//     link: { href: "https://www.impacthub.net/", isExternal: true },
+//     image: { url: "/images/image 10.jpg" },
+//   },
+// ];
 
-const ImageSlider = () => {
+const ImageSlider = ({ header, images }: ImageSliderSection) => {
+  // console.log(images);
   const [firstWord, ...rest] = header.title.split(" ");
   return (
     <section id="partners" className="flex flex-col gap-14 pt-30">
@@ -30,11 +34,7 @@ const ImageSlider = () => {
         </span>{" "}
         {rest.join(" ")}
       </h1>
-      {header.description && (
-        <div className="text-2xl lg:text-3xl leading-7.5 lg:leading-11 tracking-normal">
-          <p>{header.description}</p>
-        </div>
-      )}
+      {header.body && <RichText content={header.body} />}
       <div className="overflow-hidden w-full py-4">
         <div className="block md:hidden">
           <ResponsiveSlider images={images} threshold={1} />

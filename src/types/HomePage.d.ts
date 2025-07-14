@@ -1,23 +1,13 @@
 import { Image } from "./Image";
 import { Link } from "./Link";
-
-// Common types
-export interface RichTextChild {
-  text: string;
-  type: string;
-}
-
-export interface RichTextBlock {
-  type: string;
-  children: RichTextChild[];
-}
+import { RichText } from "@/types/richText";
 
 type Button = Link;
 
 export interface Header {
   id: number;
-  title: string | null;
-  body: RichTextBlock[];
+  title: string;
+  body: RichText[];
 }
 
 // Section types
@@ -25,14 +15,14 @@ export interface TextBlockSection {
   __component: "block.text-block-section";
   id: number;
   title: string;
-  body: RichTextBlock[];
+  body: RichText[];
 }
 
 export interface HeroSection {
   __component: "block.hero-section";
   id: number;
   title: string;
-  body: RichTextBlock[];
+  body: RichText[];
   backgroundImage: Image;
 }
 
@@ -53,7 +43,7 @@ export interface ImageContentSection {
 
 export interface ImageSliderItem {
   id: number;
-  image: Image[];
+  image: Image;
   link: Button;
 }
 
