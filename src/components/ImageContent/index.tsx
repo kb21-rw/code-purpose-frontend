@@ -22,7 +22,7 @@ const Cards = [
   },
 ];
 
-const ImageCard = () => {
+const ImageContent = () => {
   const [firstWord, ...rest] = header.title.split(" ");
   return (
     <section id="projects" className="flex flex-col gap-25 pt-30">
@@ -48,4 +48,4 @@ const ImageCard = () => {
   );
 };
 
-export default ImageCard;
+export default ImageContent;

@@ -1,8 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-"use client";
-
-import Card from "./Card";
-import Marquee from "react-fast-marquee";
+import ResponsiveSlider from "../ui/ResponsiveSlider";
 
 const header = {
   title: "Partners",
@@ -23,34 +19,6 @@ const images = [
     image: { url: "/images/image 10.jpg" },
   },
 ];
-
-const ResponsiveSlider = ({
-  images,
-  threshold,
-}: {
-  images: any;
-  threshold: number;
-}) => {
-  const shouldMarquee = images.length > threshold;
-
-  return (
-    <>
-      {shouldMarquee ? (
-        <Marquee pauseOnHover loop={0}>
-          {images.map((icon: any, idx: number) => (
-            <Card key={idx} {...icon} />
-          ))}
-        </Marquee>
-      ) : (
-        <div className="flex h-36 justify-start items-end flex-wrap gap-8 ">
-          {images.map((icon: any, idx: number) => (
-            <Card key={idx} {...icon} />
-          ))}
-        </div>
-      )}
-    </>
-  );
-};
 
 const ImageSlider = () => {
   const [firstWord, ...rest] = header.title.split(" ");
