@@ -6,6 +6,7 @@ type Button = Link;
 
 export interface Header {
   id: number;
+  hash_tag: string;
   title: string;
   body: RichText[];
 }
@@ -14,6 +15,7 @@ export interface Header {
 export interface TextBlockSection {
   __component: "block.text-block-section";
   id: number;
+  hash_tag: string;
   title: string;
   body: RichText[];
 }
@@ -21,6 +23,7 @@ export interface TextBlockSection {
 export interface HeroSection {
   __component: "block.hero-section";
   id: number;
+  hash_tag: string;
   title: string;
   body: RichText[];
   backgroundImage: Image;
@@ -37,6 +40,7 @@ export interface ImageContentItem {
 export interface ImageContentSection {
   __component: "block.image-content-section";
   id: number;
+  hash_tag: string;
   header: Header;
   content: ImageContentItem[];
 }
@@ -50,6 +54,7 @@ export interface ImageSliderItem {
 export interface ImageSliderSection {
   __component: "block.image-slider-section";
   id: number;
+  hash_tag: string;
   header: Header;
   images: ImageSliderItem[];
 }

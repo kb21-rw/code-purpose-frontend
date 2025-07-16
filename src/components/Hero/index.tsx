@@ -2,11 +2,11 @@ import { HeroSection } from "@/types/HomePage";
 import Image from "next/image";
 import RichText from "../ui/RichText";
 
-const Homepage = ({ title, body, backgroundImage }: HeroSection) => {
+const Homepage = ({ hash_tag, title, body, backgroundImage }: HeroSection) => {
   return (
     <>
       <section
-        id="home"
+        id={hash_tag}
         className="relative h-[60vh] w-full border-b-1 border-primary "
       >
         <Image

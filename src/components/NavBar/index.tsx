@@ -6,6 +6,7 @@ import Scrollspy from "react-scrollspy";
 import { Menu } from "@/types/Global";
 
 function Navbar({ menu }: { menu: Menu[] }) {
+  console.log("first", menu);
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
