@@ -1,5 +1,5 @@
 export interface Link {
-  href: string;
+  url: string;
   id: number;
   isExternal: boolean;
   text: string;

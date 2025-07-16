@@ -4,13 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Card = ({ link, image }: { link: CardLink; image: CardImage }) => {
+  console.log(link);
   return (
     <Link
-      href={link?.href || "#"}
+      href={link?.url || "#"}
       target={link?.isExternal ? "_blank" : "_self"}
       rel="noopener noreferrer"
     >
-      <div className="relative p-6 mx-6 h-32 w-48 cursor-pointer">
+      <div className="relative mx-6 h-28 w-48 cursor-pointer">
         <Image
           src={image.url}
           alt={image.alternativeText + image.name + "image"}
