@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Card = ({ link, image }: { link: CardLink; image: CardImage }) => {
-  console.log(link);
   return (
     <Link
       href={link?.url || "#"}
