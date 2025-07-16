@@ -2,28 +2,6 @@ import RichText from "../ui/RichText";
 import Card from "./Card";
 import { ImageContentSection } from "@/types/HomePage";
 
-// const header = {
-//   title: "Projects",
-//   description: `We partner with social impact actors to develop digital solutions that make the world a better place.  In our projects, the expertise of our partners is joined by the experience of our software engineers, designers and product owners to form a hive mind that is more than the sum of its parts.`,
-// };
-
-// const Cards = [
-//   {
-//     title: "Lorem Ipsum",
-//     description: ` In our projects, the expertise of our partners is joined by the
-//         experience of our software engineers, designers and product owners to
-//         form a hive mind that is more than the sum of its parts.`,
-//     image: { url: "/images/image 3.jpg", name: "image" },
-//   },
-//   {
-//     title: "Lorem Ipsum",
-//     description: ` In our projects, the expertise of our partners is joined by the
-//         experience of our software engineers, designers and product owners to
-//         form a hive mind that is more than the sum of its parts.`,
-//     image: { url: "/images/image 4.jpg", name: "image" },
-//   },
-// ];
-
 const ImageContent = ({ header, content }: ImageContentSection) => {
   const [firstWord, ...rest] = header.title.split(" ");
   return (

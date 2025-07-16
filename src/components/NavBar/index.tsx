@@ -3,15 +3,9 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Image from "next/image";
 import Scrollspy from "react-scrollspy";
+import { Menu } from "@/types/Global";
 
-const menuItems = [
-  { href: "#", label: "How we work", id: "home" },
-  { href: "#partners", label: "Partners", id: "partners" },
-  { href: "#projects", label: "Projects", id: "projects" },
-  { href: "#contact", label: "Contact Us", id: "contact" },
-];
-
-function Navbar() {
+function Navbar({ menu }: { menu: Menu[] }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -56,18 +50,18 @@ function Navbar() {
             </button>
           )}
           <Scrollspy
-            items={menuItems.map((item) => item.id)}
+            items={menu.map((item: Menu) => item.slug)}
             currentClassName="group text-primary font-bold"
             className="list-none md:bg-secondary/40 md:backdrop-blur-md md:rounded-full md:px-6 flex flex-col h-full md:flex-row gap-14 md:gap-8 mt-10 md:mt-0 justify-start items-end m-0 p-0 w-full md:w-auto"
             offset={-100}
           >
-            {menuItems.map((item) => (
+            {menu.map((item: Menu) => (
               <li
-                key={item.href}
+                key={item.id}
                 className="relative group font-bold md:font-medium text-5xl md:text-lg lg:text-2xl flex items-center justify-end gap-2"
               >
                 <Link
-                  href={item.href}
+                  href={item.slug}
                   className="hover:text-primary text-white scroll-smooth group-[.text-primary]:text-primary"
                 >
                   {item.label}

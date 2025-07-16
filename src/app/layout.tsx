@@ -21,26 +21,26 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const { data } = await getGlobals();
-  console.log(data);
+
   return (
     <html lang="en">
       <head>
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href="/apple-touch-icon.png"
+          href={data?.favicon?.url}
         />
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href="/favicon-32x32.png"
+          href={data?.favicon?.url}
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href="/favicon-16x16.png"
+          href={data?.favicon?.url}
         />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
@@ -48,9 +48,9 @@ export default async function RootLayout({
         className={`${montserrat.variable} antialiased`}
         suppressHydrationWarning={true}
       >
-        <Navbar />
+        <Navbar {...data.navbar} />
         {children}
-        <Footer />
+        <Footer {...data.footer} />
       </body>
     </html>
   );
