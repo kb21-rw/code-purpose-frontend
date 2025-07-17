@@ -36,7 +36,7 @@ const RichText = ({ content, isHero = false }: RichTextType) => {
             <Link
               key={"children?.props?.id"}
               href={url}
-              className="text-secondary"
+              className="hover:text-secondary"
               target="_blank"
               rel="noopener noreferrer"
             >
