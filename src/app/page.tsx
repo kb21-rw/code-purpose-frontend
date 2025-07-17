@@ -1,16 +1,24 @@
-import ImageSlider from "@/components/ImageSlider";
-import Hero from "../components/Hero";
-import TextBlock from "../components/TextBlock";
-import ImageCard from "../components/ImageCard";
-export default function Home() {
-  return (
-    <>
-      <Hero />
-      <div className="container">
-        <TextBlock />
-        <ImageSlider />
-        <ImageCard />
+import ScrollToTop from "@/components/ui/ScrollToTop";
+import { HomePageData } from "@/types/HomePage";
+import ComponentParser from "./cms/componentParser";
+import getHomePage from "./api/homePage";
+import NoHomepageData from "@/components/ui/NoHomepageData";
+import SiteLoadError from "@/error/SiteLoadError";
+export default async function Home() {
+  try {
+    const { data: homepage }: { data: HomePageData } = await getHomePage();
+
+    if (!homepage || homepage.sections.length === 0) {
+      return <NoHomepageData />;
+    }
+    return (
+      <div>
+        <ComponentParser sections={homepage.sections} />
+        <ScrollToTop />
       </div>
-    </>
-  );
+    );
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return <SiteLoadError />;
+  }
 }
