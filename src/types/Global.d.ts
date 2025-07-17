@@ -21,6 +21,7 @@ export interface Menu {
 
 export interface Footer {
   id: number;
+  hash_tag: string;
   Title: string;
   email: RichTextBlock[];
   copyright: RichTextBlock[];

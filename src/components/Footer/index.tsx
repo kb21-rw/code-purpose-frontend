@@ -2,11 +2,11 @@ import RichText from "../ui/RichText";
 import Media from "./Media";
 import { type Footer } from "@/types/Global";
 
-const Footer = ({ Title, email, copyright, socialMedia }: Footer) => {
+const Footer = ({ Title, hash_tag, email, copyright, socialMedia }: Footer) => {
   const [firstWord, ...rest] = Title.split(" ");
   return (
     <section
-      id="contact"
+      id={hash_tag}
       className="container pt-30 flex flex-col justify-start items-start"
     >
       <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold leading-11 tracking-normal">
