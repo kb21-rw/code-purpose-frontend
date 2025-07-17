@@ -44,6 +44,3 @@ const Footer = ({ Title, email, copyright, socialMedia }: Footer) => {
 };
 
 export default Footer;
-
-// Or reach out to [contact@code-purpose.digital](contact@code-purpose.digital)
-// © 2025 **The Gym**, All rights reserved
