@@ -12,7 +12,9 @@ const TextBlock = ({ hash_tag, title, body }: Header) => {
         </span>{" "}
         {rest.join(" ")}
       </h1>
-      <RichText content={body} />
+      <div className="text-2xl lg:text-3xl font-normal leading-7.5 lg:leading-11 tracking-normal">
+        <RichText content={body} />
+      </div>
     </div>
   );
 };

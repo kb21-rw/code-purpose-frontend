@@ -23,7 +23,9 @@ const Footer = ({ Title, email, copyright, socialMedia }: Footer) => {
               <Media key={el.id} {...el} />
             ))}
           </div>
-          {email && <RichText content={email} />}
+          <div className="text-2xl lg:text-3xl font-normal leading-7.5 lg:leading-11 tracking-normal">
+            {email && <RichText content={email} />}
+          </div>
         </div>
       </div>
 
@@ -31,7 +33,7 @@ const Footer = ({ Title, email, copyright, socialMedia }: Footer) => {
       {copyright && (
         <div className="py-4 w-full">
           {copyright && (
-            <div className="text-center  text-lg md:text-xl font-medium">
+            <div className="text-center text-lg md:text-xl font-medium">
               <RichText content={copyright} />
             </div>
           )}

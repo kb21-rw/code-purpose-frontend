@@ -12,7 +12,9 @@ const ImageSlider = ({ hash_tag, header, images }: ImageSliderSection) => {
         </span>{" "}
         {rest.join(" ")}
       </h1>
-      {header.body && <RichText content={header.body} />}
+      <div className="text-2xl lg:text-3xl font-normal leading-7.5 lg:leading-11 tracking-normal">
+        {header.body && <RichText content={header.body} />}
+      </div>
       <div className="overflow-hidden w-full py-4">
         <div className="block md:hidden">
           <ResponsiveSlider images={images} threshold={1} />

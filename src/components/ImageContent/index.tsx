@@ -12,7 +12,9 @@ const ImageContent = ({ hash_tag, header, content }: ImageContentSection) => {
         </span>{" "}
         {rest.join(" ")}
       </h1>
-      {header.body && <RichText content={header.body} />}
+      <div className="text-2xl lg:text-3xl font-normal leading-7.5 lg:leading-11 tracking-normal">
+        {header.body && <RichText content={header.body} />}
+      </div>
       <div className="grid grid-cols-1 gap-10 md:gap-20 xl:gap-40">
         {content.map((el, index) => (
           <Card key={index} {...el} />

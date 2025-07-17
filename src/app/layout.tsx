@@ -21,7 +21,6 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const { data } = await getGlobals();
-
   return (
     <html lang="en">
       <head>
@@ -48,9 +47,9 @@ export default async function RootLayout({
         className={`${montserrat.variable} antialiased`}
         suppressHydrationWarning={true}
       >
-        <Navbar {...data.navbar} />
+        {data && <Navbar {...data?.navbar} />}
         {children}
-        <Footer {...data.footer} />
+        {data && <Footer {...data?.footer} />}
       </body>
     </html>
   );

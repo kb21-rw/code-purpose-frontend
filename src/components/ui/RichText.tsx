@@ -14,7 +14,7 @@ interface RichTextType {
 
 const RichText = ({ content, isHero = false }: RichTextType) => {
   return (
-    <div className="  text-base xl:text-2xl font-normal leading-5 xl:leading-7.53">
+    <div className="">
       <BlocksRenderer
         content={content}
         blocks={{
@@ -23,15 +23,7 @@ const RichText = ({ content, isHero = false }: RichTextType) => {
           ),
 
           paragraph: ({ children }) => {
-            return (
-              <div
-                className={`${
-                  isHero && "text-white"
-                } text-2xl  lg:text-3xl font-normal leading-7.5 lg:leading-11 tracking-normal`}
-              >
-                {children}
-              </div>
-            );
+            return <div className={isHero ? "text-white" : ""}>{children}</div>;
           },
 
           list: ({ children }) => (
@@ -50,6 +42,13 @@ const RichText = ({ content, isHero = false }: RichTextType) => {
             >
               {children}
             </Link>
+          ),
+        }}
+        modifiers={{
+          code: ({ children }) => (
+            <span className="bg-primary px-1 rounded text-white">
+              {children}
+            </span>
           ),
         }}
       />
