@@ -4,6 +4,7 @@ import { ImageContentSection } from "@/types/HomePage";
 
 const ImageContent = ({ hash_tag, header, content }: ImageContentSection) => {
   const [firstWord, ...rest] = header.title.split(" ");
+
   return (
     <section id={hash_tag} className="flex flex-col gap-25 pt-30">
       <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold leading-11 tracking-normal">
