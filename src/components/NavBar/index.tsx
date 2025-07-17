@@ -37,7 +37,7 @@ function Navbar({ menu }: { menu: Menu[] }) {
           isOpen
             ? "h-100vh md:h-auto bg-[url('/images/hero.jpg')] bg-cover bg-center fixed py-8 md:py-0 md:bg-transparent flex flex-col justify-end items-end"
             : "hidden"
-        } absolute px-7 right-0 md:fixed z-10`}
+        } absolute px-7 right-auto md:fixed z-10`}
       >
         {isOpen && (
           <button

@@ -1,0 +1,24 @@
+{
+  "default_branch": "main",
+  "branches": [
+    "ft/add-intergration",
+    "ft/footer",
+    "ft/text-block",
+    "main",
+    "origin"
+  ],
+  "parent": {
+    "ft/add-intergration": "main",
+    "ft/footer": "main",
+    "ft/text-block": "main",
+    "main": null,
+    "origin": "main"
+  },
+  "order": [
+    "main",
+    "ft/add-intergration",
+    "ft/footer",
+    "ft/text-block",
+    "origin"
+  ]
+}
