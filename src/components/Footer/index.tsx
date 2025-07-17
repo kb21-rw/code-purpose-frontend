@@ -7,7 +7,7 @@ const Footer = ({ Title, hash_tag, email, copyright, socialMedia }: Footer) => {
   return (
     <section
       id={hash_tag}
-      className="container pt-30 flex flex-col justify-start items-start"
+      className="container pt-20 md:pt-30 flex flex-col justify-start items-start"
     >
       <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold leading-11 tracking-normal">
         <span className="bg-primary inline-block leading-none px-1">
@@ -16,14 +16,16 @@ const Footer = ({ Title, hash_tag, email, copyright, socialMedia }: Footer) => {
         {rest.join(" ")}
       </h1>
       <div className="flex flex-col justify-start  gap-x-18 gap-y-11 py-18 flex-wrap">
-        <h1 className="text-2xl lg:text-3xl  font-medium">Find us on :</h1>
+        <h1 className="text-xl md:text-2xl lg:text-3xl  font-medium">
+          Find us on :
+        </h1>
         <div className="flex flex-col gap-11">
           <div className="flex gap-10 items-center justify-start">
             {socialMedia.map((el) => (
               <Media key={el.id} {...el} />
             ))}
           </div>
-          <div className="text-2xl lg:text-3xl font-normal leading-7.5 lg:leading-11 tracking-normal">
+          <div className="text-xl md:text-2xl lg:text-3xl font-normal leading-7.5 lg:leading-11 tracking-normal">
             {email && <RichText content={email} />}
           </div>
         </div>

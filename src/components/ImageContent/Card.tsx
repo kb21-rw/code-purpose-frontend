@@ -8,12 +8,12 @@ const Card = ({ title, body, image, button }: ImageContentItem) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2  h-full gap-5 xl:gap-10 px-6 md:px-12 pb-6 md:pb-12 pt-3 min-h-100">
       <Image src={url} alt={name + "icon"} width={800} height={800} />
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col pt-4 md:pt-0 gap-4 md:gap-8">
         <h1 className="text-3xl font-semibold leading-none tracking-normal">
           {title}
         </h1>
         {body && (
-          <div className="text-2xl leading-normal tracking-normal">
+          <div className="text-xl md:text-2xl leading-normal tracking-normal">
             <RichText content={body} />
           </div>
         )}

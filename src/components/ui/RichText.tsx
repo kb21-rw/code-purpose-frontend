@@ -19,7 +19,9 @@ const RichText = ({ content, isHero = false }: RichTextType) => {
         content={content}
         blocks={{
           heading: ({ children }) => (
-            <h1 className="text-2xl lg:text-3xl font-medium">{children}</h1>
+            <h1 className="text-xl md:text-2xl lg:text-3xl font-medium">
+              {children}
+            </h1>
           ),
 
           paragraph: ({ children }) => {

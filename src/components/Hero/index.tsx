@@ -16,7 +16,7 @@ const Homepage = ({ hash_tag, title, body, backgroundImage }: HeroSection) => {
           className="object-cover"
           priority
         />
-        <div className="absolute container inset-0 flex flex-col items-start gap-11 justify-center mt-40">
+        <div className="absolute container inset-0 flex flex-col items-start gap-6 md:gap-11 justify-center mt-25 md:mt-40">
           <h1 className="text-5xl md:text-7xl font-extrabold lg:text-9xl text-white px-4 w-full">
             {title}
           </h1>
