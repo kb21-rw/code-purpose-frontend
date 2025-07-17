@@ -1,9 +1,8 @@
-// hooks/useScrollSpy.ts
 import { useEffect, useState } from "react";
 
 export function useScrollSpy(ids: string[], offset = 0) {
   const [activeId, setActiveId] = useState<string | null>(null);
-  console.log(activeId, "hello active PPPPPPPpppppid");
+
   useEffect(() => {
     const handleObserve = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {

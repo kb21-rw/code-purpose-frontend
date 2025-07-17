@@ -11,7 +11,6 @@ function Navbar({ menu }: { menu: MenuType[] }) {
   const activeId = useScrollSpy(menu.map((item) => item.slug));
 
   const toggleMenu = () => setIsOpen(!isOpen);
-  console.log("hello active id");
 
   return (
     <nav className="text-gray-800 md:py-8 px-6 flex justify-end items-start w-full absolute top-0 right-0 left-0 z-10 mx-auto max-w-12xl">
