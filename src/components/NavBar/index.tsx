@@ -1,19 +1,17 @@
 "use client";
 
-import Link from "next/link";
 import React, { useState } from "react";
 import Image from "next/image";
-import { Menu } from "@/types/Global";
+import { type Menu as MenuType } from "@/types/Global";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
+import Menu from "./Menu";
 
-function Navbar({ menu }: { menu: Menu[] }) {
+function Navbar({ menu }: { menu: MenuType[] }) {
   const [isOpen, setIsOpen] = useState(false);
-  const activeId = useScrollSpy(
-    menu.map((item) => item.slug),
-    100
-  );
+  const activeId = useScrollSpy(menu.map((item) => item.slug));
 
   const toggleMenu = () => setIsOpen(!isOpen);
+  console.log("hello active id");
 
   return (
     <nav className="text-gray-800 md:py-8 px-6 flex justify-end items-start w-full absolute top-0 right-0 left-0 z-10 mx-auto max-w-12xl">
@@ -28,7 +26,6 @@ function Navbar({ menu }: { menu: Menu[] }) {
               height={40}
             />
           )}
-          image
         </button>
       </div>
 
@@ -51,29 +48,10 @@ function Navbar({ menu }: { menu: Menu[] }) {
               width={40}
               height={40}
             />
-            image
           </button>
         )}
 
-        <ul className="list-none md:bg-secondary/40 md:backdrop-blur-md md:rounded-full md:px-6 flex flex-col h-full md:flex-row gap-14 md:gap-8 mt-10 md:mt-0 justify-start items-end m-0 p-0 w-full md:w-auto">
-          {menu.map((item) => (
-            <li
-              key={item.id}
-              className={`relative group font-bold md:font-medium text-5xl md:text-lg lg:text-2xl flex items-center justify-end gap-2 ${
-                activeId === item.slug ? "text-primary" : "text-white"
-              }`}
-              onClick={toggleMenu}
-            >
-              <Link
-                href={`#${item.slug}`}
-                className="hover:text-primary scroll-smooth"
-              >
-                {item.label}
-              </Link>
-              <span className="dot hidden"></span>
-            </li>
-          ))}
-        </ul>
+        <Menu menu={menu} activeId={activeId} toggleMenu={toggleMenu} />
       </div>
     </nav>
   );
