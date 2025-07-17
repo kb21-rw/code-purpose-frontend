@@ -1,7 +1,11 @@
 import React from "react";
 import { type Menu } from "@/types/Global";
 
-type MenuProps = { menu: Menu[]; activeId: string; toggleMenu: () => void };
+type MenuProps = {
+  menu: Menu[];
+  activeId: string | null;
+  toggleMenu: () => void;
+};
 const Menu = ({ menu, activeId, toggleMenu }: MenuProps) => {
   return (
     <ul className="list-none md:bg-secondary/40 md:backdrop-blur-md md:rounded-full md:px-6 flex flex-col h-full md:flex-row gap-14 md:gap-8 mt-10 md:mt-0 justify-start items-end m-0 p-0 w-full md:w-auto">
