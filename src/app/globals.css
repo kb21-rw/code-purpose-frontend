@@ -9,7 +9,7 @@
 }
 
 .navbar-container {
-  @apply max-w-12xl mx-auto w-full top-0 z-50 bg-transparent px-4 md:px-10 py-2
+  @apply relative max-w-12xl mx-auto w-full top-0 z-50 bg-transparent px-4 md:px-10 py-2
 }
 
 .footer-container {
@@ -25,6 +25,7 @@ body {
   background: var(--background);
   font-family: Montserrat, sans-serif;
   scroll-behavior: smooth;
+
 }
 
 @keyframes slide-infinite {
