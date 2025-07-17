@@ -16,21 +16,21 @@ const ComponentParser = ({ sections }: { sections: Section[] }) => {
 
           case "block.text-block-section":
             return (
-              <div className="container" key={key}>
+              <div className="container" id={item.hash_tag} key={key}>
                 <TextBlock {...item} />
               </div>
             );
 
           case "block.image-slider-section":
             return (
-              <div className="container" key={key}>
+              <div className="container" id={item.hash_tag} key={key}>
                 <ImageSlider {...item} />
               </div>
             );
 
           case "block.image-content-section":
             return (
-              <div className="container" key={key}>
+              <div className="container" id={item.hash_tag} key={key}>
                 <ImageContent {...item} />
               </div>
             );

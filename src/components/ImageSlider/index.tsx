@@ -2,10 +2,10 @@ import ResponsiveSlider from "../ui/ResponsiveSlider";
 import { ImageSliderSection } from "@/types/HomePage";
 import RichText from "../ui/RichText";
 
-const ImageSlider = ({ hash_tag, header, images }: ImageSliderSection) => {
+const ImageSlider = ({ header, images }: ImageSliderSection) => {
   const [firstWord, ...rest] = header.title.split(" ");
   return (
-    <section id={hash_tag} className="flex flex-col gap-14 pt-30">
+    <section className="flex flex-col gap-14 pt-30">
       <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold leading-11 tracking-normal">
         <span className="bg-primary inline-block leading-none px-1">
           {firstWord}
