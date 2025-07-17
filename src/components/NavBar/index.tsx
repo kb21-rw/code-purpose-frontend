@@ -16,7 +16,7 @@ function Navbar({ menu }: { menu: Menu[] }) {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="text-gray-800 md:py-8 px-6 flex justify-end items-start w-full absolute top-0 left-0 z-10 max-w-12xl">
+    <nav className="text-gray-800 md:py-8 px-6 flex justify-end items-start w-full absolute top-0 right-0 left-0 z-10 mx-auto max-w-12xl">
       <div className="md:hidden w-full flex justify-end items-start">
         <button onClick={toggleMenu} className="focus:outline-none py-8">
           {!isOpen && (
@@ -28,6 +28,7 @@ function Navbar({ menu }: { menu: Menu[] }) {
               height={40}
             />
           )}
+          image
         </button>
       </div>
 
@@ -36,7 +37,7 @@ function Navbar({ menu }: { menu: Menu[] }) {
           isOpen
             ? "h-100vh md:h-auto bg-[url('/images/hero.jpg')] bg-cover bg-center fixed py-8 md:py-0 md:bg-transparent flex flex-col justify-end items-end"
             : "hidden"
-        } absolute right-0 px-7 md:fixed z-10`}
+        } absolute px-7 right-auto md:fixed z-10`}
       >
         {isOpen && (
           <button
@@ -50,6 +51,7 @@ function Navbar({ menu }: { menu: Menu[] }) {
               width={40}
               height={40}
             />
+            image
           </button>
         )}
 
