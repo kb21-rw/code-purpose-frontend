@@ -3,7 +3,6 @@ import Image from "next/image";
 import RichText from "../ui/RichText";
 
 const Homepage = ({ hash_tag, title, body, backgroundImage }: HeroSection) => {
-  console.log(body);
   return (
     <>
       <section
@@ -24,12 +23,6 @@ const Homepage = ({ hash_tag, title, body, backgroundImage }: HeroSection) => {
           <div className="text-2xl  text-white px-4 w-full md:w-4/5 lg:w-1/2  lg:text-3xl font-normal leading-7.5 lg:leading-11 tracking-normal">
             <RichText content={body} isHero={true} />
           </div>
-          {/* <p className="text-2xl  text-white px-4 w-full md:w-4/5 lg:w-1/2  lg:text-3xl font-normal leading-7.5 lg:leading-11 tracking-normal">
-            We partner with social impact actors to develop <br />
-            <span className="bg-primary">
-              digital solutions that make the world a better place.
-            </span>
-          </p> */}
         </div>
       </section>
     </>
