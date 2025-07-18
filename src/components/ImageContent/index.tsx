@@ -10,7 +10,7 @@ const ImageContent = ({ header, content }: ImageContentSection) => {
       <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold leading-11 tracking-normal">
         <span className="bg-primary inline-block leading-none px-1">
           {firstWord}
-        </span>{" "}
+        </span>
         {rest.join(" ")}
       </h1>
       <div className="text-xl md:text-2xl lg:text-3xl font-normal leading-7.5 lg:leading-11 tracking-normal">
