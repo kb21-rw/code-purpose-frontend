@@ -4,17 +4,20 @@ import RichText from "../ui/RichText";
 
 const TextBlock = ({ title, body }: Header) => {
   const [firstWord, ...rest] = title.split(" ");
+  const textBody = body && body[0].children[0].text !== "";
   return (
     <div className="flex flex-col gap-10 md:gap-25 pt-20 md:pt-30">
       <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold leading-11 p-0 tracking-normal">
         <span className="bg-primary inline-block leading-none px-1">
           {firstWord}
-        </span>{" "}
+        </span>
         {rest.join(" ")}
       </h1>
-      <div className="text-xl md:text-2xl lg:text-3xl font-normal leading-7.5 lg:leading-11 tracking-normal">
-        <RichText content={body} />
-      </div>
+      {textBody && (
+        <div className="text-xl md:text-2xl lg:text-3xl font-normal leading-7.5 lg:leading-11 tracking-normal">
+          <RichText content={body} />
+        </div>
+      )}
     </div>
   );
 };
