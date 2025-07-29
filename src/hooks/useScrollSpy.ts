@@ -14,7 +14,7 @@ export function useScrollSpy(ids: string[], offset = 0) {
 
     const observer = new IntersectionObserver(handleObserve, {
       rootMargin: `-${offset}px 0px 0px 0px`,
-      threshold: 0.6,
+      threshold: ids.length > 1 ? ids.length / 10 : 0.4,
     });
 
     ids.forEach((id) => {
