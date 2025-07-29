@@ -10,7 +10,7 @@ const Card = ({ link, image }: { link: CardLink; image: CardImage }) => {
       target={link?.isExternal ? "_blank" : "_self"}
       rel="noopener noreferrer"
     >
-      <div className="relative mx-6 h-32 w-48 cursor-pointer">
+      <div className="relative mx-6 h-32 w-72 cursor-pointer">
         <Image
           src={image.url}
           alt={image.alternativeText + image.name + "image"}

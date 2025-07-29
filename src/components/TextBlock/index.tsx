@@ -6,8 +6,8 @@ const TextBlock = ({ title, body }: Header) => {
   const [firstWord, ...rest] = title.split(" ");
   const textBody = body && body[0].children[0].text !== "";
   return (
-    <div className="flex flex-col gap-10 md:gap-25 pt-20 md:pt-30">
-      <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold leading-11 p-0 tracking-normal">
+    <div className="flex flex-col gap-10 md:gap-15 pt-20 ">
+      <h1 className="text-5xl md:text-7xl font-semibold leading-11 p-0 tracking-normal">
         <span className="bg-primary inline-block leading-none px-1">
           {firstWord}
         </span>

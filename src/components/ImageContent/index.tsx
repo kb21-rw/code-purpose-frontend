@@ -6,8 +6,8 @@ const ImageContent = ({ header, content }: ImageContentSection) => {
   const [firstWord, ...rest] = header.title.split(" ");
   const body = header.body && header.body[0].children[0].text !== "";
   return (
-    <section className="flex flex-col gap-10 md:gap-25 pt-20 md:pt-30">
-      <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold leading-11 tracking-normal">
+    <section className="flex flex-col gap-10 md:gap-15 pt-20 ">
+      <h1 className="text-5xl md:text-7xl  font-semibold leading-11 tracking-normal">
         <span className="bg-primary inline-block leading-none px-1">
           {firstWord}
         </span>

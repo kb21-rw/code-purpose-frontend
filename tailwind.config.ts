@@ -30,6 +30,7 @@ export default {
       },
       fontSize: {
         "2.1xl": "1.5625rem",
+        "7.5xl ": "4.375rem",
       },
     },
   },
