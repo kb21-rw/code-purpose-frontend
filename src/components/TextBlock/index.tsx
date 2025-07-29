@@ -10,7 +10,7 @@ const TextBlock = ({ title, body }: Header) => {
       <h1 className="text-5xl md:text-7xl font-semibold leading-11 p-0 tracking-normal">
         <span className="bg-primary inline-block leading-none px-1">
           {firstWord}
-        </span>
+        </span>{" "}
         {rest.join(" ")}
       </h1>
       {textBody && (
